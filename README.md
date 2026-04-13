@@ -1,108 +1,157 @@
-# Conversational RAG with PDF Uploads and Chat History
+# 📄 Conversational RAG with PDF Upload & Chat History
 
-This project is a **Conversational Retrieval-Augmented Generation (RAG) system** built with **Streamlit** and **LangChain**, allowing users to upload PDFs and interactively chat with their contents while maintaining conversation history.
-
----
-
-## Features
-
-- Upload multiple PDF documents for analysis.
-- Split documents into chunks and create embeddings using **HuggingFace embeddings** (`all-MiniLM-L6-v2`).
-- Use **Groq LLM** (`llama-3.3-70b-versatile`) for generating responses.
-- Maintain **chat history** for context-aware responses.
-- Rewrite user questions based on previous chat for better context understanding.
-- Streamlit web interface for interactive Q&A.
+🚀 **Live Demo:**
+👉 https://rag-q-a-conversation-with-pdf-including-chat-history-kk8pehn3p.streamlit.app/
 
 ---
 
-## Installation
+## 📌 Overview
 
-1. **Clone the repository**
+This project is a **Conversational RAG (Retrieval-Augmented Generation) system** that allows users to:
+
+* 📄 Upload one or more PDF documents
+* 💬 Ask questions about the content
+* 🧠 Maintain chat history (context-aware responses)
+* ⚡ Get fast answers using Groq LLM
+
+It combines **LangChain, ChromaDB, and Groq** to build an intelligent document-based chatbot.
+
+---
+
+## ✨ Features
+
+* 📂 Multi-PDF upload support
+* 🔍 Context-aware question answering
+* 🧠 Chat history memory
+* ⚡ Fast inference using Groq (LLaMA 3.3)
+* 📊 Text chunking & embeddings
+* 🗂️ Vector database (ChromaDB)
+* 🌐 Deployed on Streamlit Cloud
+
+---
+
+## 🏗️ Tech Stack
+
+* **Frontend:** Streamlit
+* **LLM:** Groq (LLaMA 3.3 70B)
+* **Framework:** LangChain
+* **Vector DB:** ChromaDB
+* **Embeddings:** HuggingFace (`all-MiniLM-L6-v2`)
+* **PDF Loader:** PyPDF
+
+---
+
+## ⚙️ How It Works
+
+1. 📄 User uploads PDF(s)
+2. ✂️ Text is split into chunks
+3. 🔢 Embeddings are generated
+4. 🗂️ Stored in Chroma vector database
+5. 🔍 Relevant chunks retrieved for queries
+6. 🤖 LLM generates context-aware answers
+7. 🧠 Chat history improves follow-up questions
+
+---
+
+## 🛠️ Installation & Setup
+
+### 1️⃣ Clone the repository
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-directory>
-Create a virtual environment
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-bash
-Copy code
-python -m venv venv
-Activate the virtual environment
+### 2️⃣ Create environment (recommended)
 
-Windows:
+```bash
+conda create -n rag_env python=3.10
+conda activate rag_env
+```
 
-bash
-Copy code
-venv\Scripts\activate
-macOS/Linux:
+### 3️⃣ Install dependencies
 
-bash
-Copy code
-source venv/bin/activate
-Install dependencies
-
-bash
-Copy code
+```bash
 pip install -r requirements.txt
-Example requirements.txt:
+```
 
-arduino
-Copy code
-langchain
-langchain-core
-langchain-community
-langchain-chroma
-langchain-huggingface
-langchain-groq
-chromadb
-sentence-transformers
-pypdf
-langchain-text-splitters
-python-dotenv
-streamlit
-fastapi
-uvicorn
-langserve
-Setup
-Set your HuggingFace API key in a .env file:
+---
 
-ini
-Copy code
-HUGGINGFACE_API_KEY=your_huggingface_api_key
-Run the app:
+## 🔐 Environment Variables
 
-bash
-Copy code
+Create `.env` (for local use):
+
+```env
+GROQ_API_KEY=your_api_key_here
+```
+
+---
+
+## ▶️ Run the App
+
+```bash
 streamlit run app.py
-Enter your Groq API key in the Streamlit interface when prompted.
+```
 
-Usage
-Enter a session ID (default: default_session) to track chat history.
+---
 
-Upload one or more PDF files.
+## 🌐 Deployment
 
-Ask questions in the input box.
+This app is deployed using **Streamlit Community Cloud**.
 
-The assistant will provide answers based on the uploaded PDFs and maintain context-aware chat history.
+To deploy:
 
-File Structure
-bash
-Copy code
-├── app.py                 # Main Streamlit application
-├── requirements.txt       # Python dependencies
-├── .env                   # Environment variables (HuggingFace API key)
-├── README.md              # Project documentation
-└── venv/                  # Virtual environment (ignored in git)
-Notes
-Ensure you have a valid Groq API key and HuggingFace API key.
+1. Push code to GitHub
+2. Go to Streamlit Cloud
+3. Connect repository
+4. Add secret:
 
-Only PDF files are supported for upload.
+   ```toml
+   GROQ_API_KEY="your_key_here"
+   ```
+5. Deploy 🚀
 
-Chat history is stored per session ID, enabling multiple independent conversations.
+---
 
-License
-This project is open-source and available under the MIT License.
+## 📸 Screenshots
 
-Author
-Laxman Sannu Gouda
-laxman.sg0104@gmail.com
+*(Add screenshots here if needed)*
+
+---
+
+## 📚 Learnings
+
+* Implemented RAG architecture
+* Integrated LLM with vector search
+* Built memory-aware chatbot
+* Handled deployment challenges (dependencies, protobuf, etc.)
+
+---
+
+## 🔮 Future Improvements
+
+* 💬 ChatGPT-style UI
+* 💾 Persistent vector database
+* 📂 Support for multiple file formats (CSV, DOCX)
+* 🔐 User authentication
+* 🌍 Multi-user session handling
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork and improve the project.
+
+---
+
+## 📧 Contact
+
+If you have any questions or suggestions, feel free to reach out.
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project, please ⭐ the repo!
+
+---
