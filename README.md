@@ -113,12 +113,6 @@ To deploy:
 
 ---
 
-## 📸 Screenshots
-
-*(Add screenshots here if needed)*
-
----
-
 ## 📚 Learnings
 
 * Implemented RAG architecture
